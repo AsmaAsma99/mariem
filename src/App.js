@@ -1,25 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Profile from './Profile';
+import Image from './Image.jpg';
+
+const person ={
+  photo:Image,
+  name: {firstName:"Asma", lastName:"Ayed"},
+  facebook: {face:"facebook", link:()=>{window.location="https://www.facebook.com/asma.ayed.5"} }
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Profile 
+Src={person.photo} 
+    Name={person.name.firstName + " " + person.name.lastName} 
+    onClick1={person.facebook.link} 
+    Facebook={person.facebook.face}
+    
+    
+    />
+    
   );
 }
 
